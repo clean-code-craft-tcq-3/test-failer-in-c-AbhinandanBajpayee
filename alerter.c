@@ -2,13 +2,20 @@
 #include <assert.h>
 
 int alertFailureCount = 0;
+#define TemperatureThreshold 200
 
 int networkAlertStub(float celcius) {
+    int returnCode = 0; 
     printf("ALERT: Temperature is %.1f celcius.\n", celcius);
-    // Return 200 for ok
-    // Return 500 for not-ok
-    // stub always succeeds and returns 200
-    return 200;
+    if(TemperatureThreshold < celcius)
+    {
+        returnCode = 500;
+    }
+    else
+    {
+        returnCode = 200;
+    }
+    return returnCode;
 }
 
 void alertInCelcius(float farenheit) {
@@ -27,6 +34,7 @@ int main() {
     alertInCelcius(400.5);
     alertInCelcius(303.6);
     printf("%d alerts failed.\n", alertFailureCount);
+    assert(alertFailureCount == 1);
     printf("All is well (maybe!)\n");
     return 0;
 }
