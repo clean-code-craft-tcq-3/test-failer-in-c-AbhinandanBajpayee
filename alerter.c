@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <assert.h>
+#include "CommonHeader.h"
 
 int alertFailureCount = 0;
-#define TemperatureThreshold 200
 
 int networkAlertStub(float celcius) {
     int returnCode = 0; 
