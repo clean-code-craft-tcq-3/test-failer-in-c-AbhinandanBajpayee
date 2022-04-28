@@ -1,3 +1,6 @@
+#include <string.h>
+#include <cstring>
+
 #define TemperatureThreshold 200
 extern int alertFailureCount;
 int printColorMap();
