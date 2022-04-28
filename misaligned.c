@@ -2,7 +2,7 @@
 #include <assert.h>
 #include "CommonHeader.h"
 
-olorpair colorpair[25];
+Colorpair colorpair[25];
 
 int printAndUpdateColorData() {
     int i = 0, j = 0, localPairNumber=0;
