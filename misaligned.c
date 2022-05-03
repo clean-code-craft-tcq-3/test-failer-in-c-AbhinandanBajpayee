@@ -10,8 +10,8 @@ int printAndUpdateColorData() {
         for(j = 0; j < 5; j++) {
             localPairNumber = localPairNumber+1;
             strcpy(colorpair[localPairNumber].MajorColor , majorColor[i]);
-	        strcpy(colorpair[localPairNumber].MinorColor , minorColor[i]);
-            printf("%d | %s | %s\n", i * 5 + j, majorColor[i], minorColor[i]);
+	        strcpy(colorpair[localPairNumber].MinorColor , minorColor[j]);
+            printf("%d | %s | %s\n", i * 5 + j, majorColor[i], minorColor[j]);
         }
     }
     return i * j;
